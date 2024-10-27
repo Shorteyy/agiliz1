@@ -41,29 +41,7 @@ view: order_items {
     type: number
     sql: ${TABLE}.sale_price ;;
   }
-  measure: dyn_saleprice {
-    label_from_parameter: aggregatie_selector
-    type: number
-    sql: {% parameter aggregatie_selector%}(${sale_price}) ;;
-  }
 
-  parameter: aggregatie_selector {
-    label: "Pick the aggregation"
-    type: unquoted
-    allowed_value: {
-      label: "MAX"
-      value: "MAX"
-    }
-    allowed_value: {
-      label: "Total"
-      value: "SUM"
-    }
-    allowed_value: {
-      label: "Average"
-      value: "AVG"
-    }
-    default_value: "SUM"
-  }
   dimension_group: shipped {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
