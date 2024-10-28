@@ -67,6 +67,8 @@ explore: products {
   }
 }
 
+explore: distribution_centers {}
+
 explore: users {}
 
 explore: inventory_items {
@@ -81,4 +83,5 @@ explore: inventory_items {
     sql_on: ${products.distribution_center_id} = ${distribution_centers.id} ;;
     relationship: many_to_one
   }
+
 }
