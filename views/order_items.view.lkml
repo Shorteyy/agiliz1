@@ -87,7 +87,7 @@ view: order_items {
 
   parameter: liquid_parameter  {
     label: "Select an aggregation"
-    type: number
+    type: unquoted
     allowed_value: {
       label: "Total sale price"
       value: "TOTAL"
