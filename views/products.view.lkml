@@ -45,16 +45,28 @@ view: products {
     drill_fields: [detail*]
   }
 
+  measure: total_retailprice {
+    type: sum
+    sql: ${retail_price} ;;
+    value_format: "€#.00;(€#.00)"
+  }
+
+  measure: average_retailprice {
+    type: average
+    sql: ${retail_price} ;;
+    value_format: "€#.00;(€#.00)"
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
-	id,
-	name,
-	distribution_centers.name,
-	distribution_centers.id,
-	order_items.count,
-	inventory_items.count
-	]
+  id,
+  name,
+  distribution_centers.name,
+  distribution_centers.id,
+  order_items.count,
+  inventory_items.count
+  ]
   }
 
 }
