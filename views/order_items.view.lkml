@@ -76,4 +76,31 @@ view: order_items {
   ]
   }
 
+  measure: sales_selector {
+    label_from_parameter: liquid_parameter
+    type: number
+    sql: {% parameter liquid_parameter %}(${sale_price}) ;;
+    value_format: "€#.00;(€#.00)"
+  }
+
+#parameters
+
+  parameter: liquid_parameter  {
+    label: "Select an aggregation"
+    type: number
+    allowed_value: {
+      label: "Total sale price"
+      value: "TOTAL"
+    }
+    allowed_value: {
+      label: "Average sale price"
+      value: "AVERAGE"
+    }
+    allowed_value: {
+      label: "Max sale price"
+      value: "MAX"
+    }
+    default_value: "TOTAL"
+  }
+
 }
